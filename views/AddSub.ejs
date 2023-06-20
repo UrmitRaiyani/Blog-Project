@@ -1,0 +1,61 @@
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Form Validation</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.min.css">
+    <link href="/vendor/fonts/circular-std/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="/libs/css/style.css">
+    <link rel="stylesheet" href="/vendor/fonts/fontawesome/css/fontawesome-all.css">
+</head>
+<%- include('header') %>
+<div class="row">
+    <!-- ============================================================== -->
+    <!-- basic form -->
+    <!-- ============================================================== -->
+    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12" style="margin: 50px;">
+        <div class="card">
+           
+            <div class="card-body">
+                <form action="/insertsubcategory" id="basicform" method="post" enctype="multipart/form-data">
+                    <select name="categoryId" id="">
+                        <option value=""></option>
+                        <% for(var cd of catdata){%>
+                            <option value="<%=cd.id%>"><%=cd.category%></option>
+                        <% }%>
+                    </select>
+                    <div class="form-group">
+                        <label for="first name">category name</label>
+                        <input id="inputUserName" type="text" name="subName" placeholder="Enter category"
+                            class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <div class="custom-file mb-3">
+                            <input type="file" class="custom-file-input" name="subImage" id="customFile">
+                            <label class="custom-file-label" for="customFile">File Input</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6 pb-2 pb-sm-4 pb-lg-0 pr-0">
+                            <label class="be-checkbox custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input"><span
+                                    class="custom-control-label">Remember me</span>
+                            </label>
+                        </div>
+                        <div class="col-sm-6 pl-0">
+                            <p class="text-right">
+                                <input type="submit" name="submit" class="btn btn-space btn-primary">
+                            </p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- end basic form -->
+    <!-- ============================================================== -->
+</div>
+<%- include('footer') %>
+

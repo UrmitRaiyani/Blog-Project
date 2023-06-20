@@ -1,0 +1,100 @@
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Concept - Bootstrap 4 Admin Dashboard Template</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.min.css">
+    <link href="/vendor/fonts/circular-std/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="/libs/css/style.css">
+    <link rel="stylesheet" href="/vendor/fonts/fontawesome/css/fontawesome-all.css">
+</head>
+<%- include('header') %>
+<div class="dashboard-wrapper">
+            <div class="container-fluid  dashboard-content">
+                <!-- ============================================================== -->
+                <!-- pageheader -->
+                <!-- ============================================================== -->
+                <div class="row">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <div class="page-header">
+                            <h2 class="pageheader-title">General Tables </h2>
+                            <p class="pageheader-text">Proin placerat ante duiullam scelerisque a velit ac porta, fusce sit amet vestibulum mi. Morbi lobortis pulvinar quam.</p>
+                            <div class="page-breadcrumb">
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Dashboard</a></li>
+                                        <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Tables</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page">General Tables</li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ============================================================== -->
+                <!-- end pageheader -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- hoverable table -->
+                <!-- ============================================================== -->
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                    <div class="card">
+                        <h5 class="card-header">Hoverable Table</h5>
+                        <form action="">
+                            <input type="text" name="search"><input type="submit" name="searching"
+                                id="">
+                        </form>
+                            <div class="card-body">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Name</th>
+                                            <th scope="col">email</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <% for(u of record){%>
+                                            <tr>
+                                                <td><%= u.name %></td>
+                                                <td><%= u.email %></td>
+                                                <% if(u.isActive == true) { %>
+                                                <td>
+                                                    <a href="/deactive/<%= u.id %>" class="btn btn-primary">Deactive</a>
+                                                </td>
+                                                <% } %>
+
+                                                <% if(u.isActive == false) { %>
+                                                <td>
+                                                    <a href="/Active/<%= u.id %>" class="btn btn-SUCCESS">Active</a>
+                                                </td>
+                                                <% } %>
+                                            </tr>
+                                        <% } %>
+
+                                        <tr>
+                                            <td colspan="6">
+                                            <% for(var i=1; i<=totalPage; i++) { %>
+                                                <a href="?page=<%= i %>&search=<%= searchData %>"><%= i %></a>
+                                            <% } %>
+                                            </td>
+                                        </tr>
+                                        
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                <!-- ============================================================== -->
+                <!-- end hoverable table -->
+                <!-- ============================================================== -->
+            </div>
+
+<%- include('footer') %>
+
+<!-- Optional JavaScript -->
+<script src="/vendor/jquery/jquery-3.3.1.min.js"></script>
+<script src="/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+<script src="/vendor/slimscroll/jquery.slimscroll.js"></script>
+<script src="/vendor/custom-js/jquery.multi-select.html"></script>
+<script src="/libs/js/main-js.js"></script>

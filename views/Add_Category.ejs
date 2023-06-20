@@ -1,0 +1,49 @@
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Form Validation</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.min.css">
+    <link href="/vendor/fonts/circular-std/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="/libs/css/style.css">
+    <link rel="stylesheet" href="/vendor/fonts/fontawesome/css/fontawesome-all.css">
+</head>
+<%- include('header') %>
+<div class="row">
+    <!-- ============================================================== -->
+    <!-- basic form -->
+    <!-- ============================================================== -->
+    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12" style="margin: 50px;">
+        <div class="card">
+           
+            <div class="card-body">
+                <form action="/insertcategory" method="post">
+                    <div class="form-group">
+                        <label for="inputUserName">enter gallery category</label>
+                        <input id="inputUserName" type="text" name="category" data-parsley-trigger="change" required="" placeholder="Enter user name" autocomplete="off" class="form-control">
+                    </div>
+                    
+                    <br>
+                    <div class="row">
+                        <div class="col-sm-6 pb-2 pb-sm-4 pb-lg-0 pr-0">
+                            <label class="be-checkbox custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input"><span class="custom-control-label">Remember me</span>
+                            </label>
+                        </div>
+                        <div class="col-sm-6 pl-0">
+                            <p class="text-right">
+                                <button type="submit" class="btn btn-space btn-primary" name="submit">Submit</button>
+                                <button class="btn btn-space btn-secondary">Cancel</button>
+                            </p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- end basic form -->
+    <!-- ============================================================== -->
+</div>
+<%- include('footer') %>

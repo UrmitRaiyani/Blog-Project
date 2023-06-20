@@ -1,0 +1,85 @@
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Form Validation</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.min.css">
+    <link href="/vendor/fonts/circular-std/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="/libs/css/style.css">
+    <link rel="stylesheet" href="/vendor/fonts/fontawesome/css/fontawesome-all.css">
+</head>
+<%- include('header') %>
+<div class="row">
+    <!-- ============================================================== -->
+    <!-- basic form -->
+    <!-- ============================================================== -->
+    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+        <div class="card">
+            <h5 class="card-header">Basic Form</h5>
+            <div class="card-body">
+                <form action="/insertBlogRecord"  enctype="multipart/form-data" method="post">
+                    <div class="form-group">
+                        <label for="inputUserName">Title</label>
+                        <input id="inputUserName" type="text" name="title" data-parsley-trigger="change" required="" placeholder="Enter First name" autocomplete="off" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputUserName">Enter Description</label>
+                        <textarea id="inputUserName"  name="description" data-parsley-trigger="change" required=""  class="form-control"></textarea>
+                    </div>
+
+                    
+
+                    <div class="custom-file mb-3">
+                        <input type="file" name="avatar" class="custom-file-input" id="customFile">
+                        <label class="custom-file-label" for="customFile">Upload Image</label>
+                    </div>
+                    
+                    <div class="row">
+                       
+                        <div class="col-sm-6 pl-0">
+                            <p class="text-right">
+                                <input  type="submit" class="btn btn-space btn-primary" value="add Blogs" name="Submit">
+                                <button class="btn btn-space btn-secondary">Cancel</button>
+                            </p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- end basic form -->
+    <!-- ============================================================== -->
+</div>
+<%- include('footer') %>
+<!-- Optional JavaScript -->
+<script src="/vendor/jquery/jquery-3.3.1.min.js"></script>
+<script src="/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+<script src="/vendor/slimscroll/jquery.slimscroll.js"></script>
+<script src="/vendor/parsley/parsley.js"></script>
+<script src="/libs/js/main-js.js"></script>
+<script>
+$('#form').parsley();
+</script>
+<script>
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(function() {
+    'use strict';
+    window.addEventListener('load', function() {
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.getElementsByClassName('needs-validation');
+        // Loop over them and prevent submission
+        var validation = Array.prototype.filter.call(forms, function(form) {
+            form.addEventListener('submit', function(event) {
+                if (form.checkValidity() === false) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+                form.classList.add('was-validated');
+            }, false);
+        });
+    }, false);
+})();
+</script>
